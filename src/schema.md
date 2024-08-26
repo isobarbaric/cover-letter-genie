@@ -5,20 +5,48 @@ schema for <div id="postingDiv">:
     - second div: <div class="panel-body">
         - table: <table class="table table-bordered">
             - tbody: <tbody>
-                - first row: <tr>
-                - second row: <tr>
-                - third row: <tr>
-                - fourth row: <tr>
-                - fifth row: <tr>
-                - sixth row: <tr>
-                - seventh row: <tr>
-                - eight row: <tr>
-                - ninth row: <tr>
-                - tenth row: <tr>
-                - eleventh row: <tr>
-                - twelvth row: <tr>
-                - thirteenth row: <tr>
-                - fourteenth row: <tr>
+                - first row:
+                    - first td: "Term Posted:"
+                    - second td: date for timeline
+                - second row: 
+                    - first td: "Position Type:"
+                    - second td: type of position
+                - third row: 
+                    - first td: "Level:"
+                    - second td: list of academic levels eligible (Bachelor, Master, PhD)
+                - fourth row: 
+                    - first td: "Job Title:"
+                    - second td: job title
+                - fifth row: 
+                    - first td: "Job Openings:"
+                    - second td: # of job openings
+                - sixth row: 
+                    - first td: "Job Category (NOC):"
+                    - second td: category of jobs
+                - seventh row: 
+                    - first td: "Region:"
+                    - second td: region name
+                - eight row: 
+                    - first td: "Start Date:"
+                    - second td: start date
+                - ninth row: 
+                    - first td: "Job Summary:"
+                    - second td: job summary
+                - tenth row: 
+                    - first td: "Job Responsibilities:"
+                    - second td: list of job responsibilities
+                - eleventh row:
+                    - first td: "Required Skills:"
+                    - second td: list of required skills
+                - twelvth row: 
+                    - first td: "Compensation and Benefits:"
+                    - second td: list of compensation and benefits
+                - thirteenth row: 
+                    - first td: "Other Job Details:"
+                    - second td: job details
+                - fourteenth row: 
+                    - first td: "Targeted Degrees and Disciplines:"
+                    - second td: list of themes and targeted disciplines (e.g. Math, Engineering, etc.)
 
 
 - second div: <div class="panel panel-default">
@@ -26,17 +54,29 @@ schema for <div id="postingDiv">:
     - second div: <div class="panel-body">
         - table: <table class="table table-bordered">
             - tbody: <tbody>
-                - first row: <tr>
-                - second row: <tr>
-                - third row: <tr>
-                - fourth row: <tr>
+                - first row: 
+                    - first td: "Applicaton Deadline:"
+                    - second td: deadline
+                - second row: 
+                    - first td: "Application Delivery:"
+                    - second td: platform
+                - third row: 
+                    - first td: "Application Documents Required:"
+                    - second td: list of documents required
+                - fourth row:
+                    - first td: "Additional Application Information:"
+                    - second td: extra information (and instructions?)
 
 
 - third div: <div class="panel panel-default">
     - first div: <div class="panel-heading">
     - second div: <div class="panel-body">
         - table: <table class="table table-bordered">
-            - tbody: <tbody>
-                - first row: <tr>
-                - second row: <tr>
+            - tbody:
+                - first row:
+                    - first td: "Organization:"
+                    - second td: organization name
+                - second row:
+                    - first td: "Division:"
+                    - second td: division name
 
