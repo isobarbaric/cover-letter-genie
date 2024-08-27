@@ -1,42 +1,48 @@
 
-// use trim
-// cut out the ':' at the end - instead of slicing off indiscriminately, we should check if the last character is a colon
-const cleanText = (text) => {
-    let cleanedText = text.trim();
-    if (cleanedText[cleanedText.length - 1] === ':') {
-        cleanedText = cleanedText.slice(0, -1);
-    }
-
-    return cleanedText;
-}
-
-
-
-// specify interface instead of a dataclass?
 // dataclass for a coop posting
+// TODO: add specific parsing by field
 class CoopPosting {
+    termPosted: string
+    positionType: string
+    level: string
+    jobTitle: string
+    jobOpenings: string
+    jobCategory: string
+    region: string
+    startDate: string
+    jobSummary: string
+    jobResponsibilities: string
+    requiredSkills: string
+    compensationAndBenefits: string
+    otherJobDetails: string
+    targetedDegreesAndDisciplines: string
+    applicationDeadline: string
+    applicatonDelivery: string
+    applicationDocumentsRequired: string
+    additionalApplicationInfo: string
+    organization: string
+    division: string
     
-    // process each individual field 
-    constructor(termPosted,
-                positionType,
-                level,
-                jobTitle,
-                jobOpenings,
-                jobCategory,
-                region,
-                startDate,
-                jobSummary,
-                jobResponsibilities,
-                requiredSkills,
-                compensationAndBenefits,
-                otherJobDetails,
-                targetedDegreesAndDisciplines,
-                applicationDeadline,
-                applicatonDelivery,
-                applicationDocumentsRequired,
-                additionalApplicationInfo,
-                organization,
-                division) {
+    constructor(termPosted: string,
+                positionType: string,
+                level: string,
+                jobTitle: string,
+                jobOpenings: string,
+                jobCategory: string,
+                region: string,
+                startDate: string,
+                jobSummary: string,
+                jobResponsibilities: string,
+                requiredSkills: string,
+                compensationAndBenefits: string,
+                otherJobDetails: string,
+                targetedDegreesAndDisciplines: string,
+                applicationDeadline: string,
+                applicatonDelivery: string,
+                applicationDocumentsRequired: string,
+                additionalApplicationInfo: string,
+                organization: string,
+                division: string) {
         this.termPosted = termPosted;
         this.positionType = positionType;
         this.level = level;
