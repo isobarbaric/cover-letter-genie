@@ -12,6 +12,7 @@ const cleanText = (text) => {
 
 
 
+// specify interface instead of a dataclass?
 // dataclass for a coop posting
 class CoopPosting {
     
@@ -56,6 +57,11 @@ class CoopPosting {
         this.additionalApplicationInfo = additionalApplicationInfo;
         this.organization = organization;
         this.division = division;
+    }
+
+    // only include the job title and organization
+    toString() {
+        return `${this.jobTitle} at ${this.organization}`;
     }
 
 }
