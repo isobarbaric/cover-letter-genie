@@ -1,4 +1,28 @@
 
+//export interface CoopPostingProps {
+//    termPosted: string
+//    positionType: string
+//    level: string
+//    jobTitle: string
+//    jobOpenings: string
+//    jobCategory: string
+//    region: string
+//    startDate: string
+//    jobSummary: string
+//    jobResponsibilities: string
+//    requiredSkills: string
+//    compensationAndBenefits: string
+//    otherJobDetails: string
+//    targetedDegreesAndDisciplines: string
+//    applicationDeadline: string
+//    applicatonDelivery: string
+//    applicationDocumentsRequired: string
+//    additionalApplicationInfo: string
+//    organization: string
+//    division: string
+//}
+
+
 // dataclass for a coop posting
 // TODO: add specific parsing by field
 class CoopPosting {

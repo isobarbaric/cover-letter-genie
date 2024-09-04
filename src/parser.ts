@@ -12,6 +12,10 @@ const cleanKey = (text: string): string => {
     return cleanedText;
 }
 
+interface PostingData {
+  [key: string]: string;
+}
+
 // TODO: specify all types for intermediate variables
 const extractData = (HTMLSource: string): CoopPosting => {
     const $ = cheerio.load(HTMLSource);
@@ -19,7 +23,7 @@ const extractData = (HTMLSource: string): CoopPosting => {
     const panels = postingDiv.find('.panel.panel-default');
 
     assert(panels.length === 3);
-    const postingData = {};
+    const postingData: PostingData = {};
 
     // iterate through each panel
     for (let i = 0; i < panels.length; i++) {
@@ -29,8 +33,8 @@ const extractData = (HTMLSource: string): CoopPosting => {
         // in each panel, iterate through each row
         for (let i = 0; i < rowData.length; i++) {
             const currentRow = rowData.eq(i);
-            const label = $(currentRow).find('td').eq(0).text().trim(); 
-            const value = $(currentRow).find('td').eq(1).text().trim(); 
+            const label: string = $(currentRow).find('td').eq(0).text().trim(); 
+            const value: string = $(currentRow).find('td').eq(1).text().trim(); 
             postingData[cleanKey(label)] = value;
         }
     }
@@ -64,4 +68,3 @@ const extractData = (HTMLSource: string): CoopPosting => {
 let html = fs.readFileSync('src/sample-posting.html', 'utf8');
 const posting = extractData(html);
 console.log(posting.toString());
-
