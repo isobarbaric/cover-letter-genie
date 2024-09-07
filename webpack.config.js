@@ -4,10 +4,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   // Entry points for bundling each JavaScript file
   entry: {
-    background: './extension/background.js',
-    content: './extension/content.js',
-    coopPosting: './extension/coopPosting.js',
-    parser: './extension/parser.js'
+    background: './src/background.js',
+    content: './src/content.js',
+    coopPosting: './src/coopPosting.js',
+    parser: './src/parser.js'
   },
   output: {
     // Output bundles will be placed in the 'dist' folder
@@ -32,7 +32,7 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'extension/manifest.json', to: 'manifest.json' },
+        { from: 'src/manifest.json', to: 'manifest.json' },
       ]
     })
   ]

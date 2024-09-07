@@ -26,24 +26,23 @@ const toggleIcon = (postingOpen) => {
 chrome.runtime.onInstalled.addListener(({reason}) => {
   if (reason === 'install') {
     console.log("WaterlooWorks Cover Letter Genie (V1.0)");
-    //chrome.tabs.create({
-    //  url: "onboarding.html"
-    //});
   }
 });
 
 // TODO: have content script send html without having to reload the page 
 // listen for messages from the content script
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((message) => {
   if (message.type === 'page_html') {
     const parsedData = extractData(message.html);
 
     if (isPosting(parsedData)) {
       toggleIcon(true);
-      console.log(parsedData);
+      //console.log(parsedData);
+      chrome.runtime.sendMessage({ type: 'job_posting', jobPosting: parsedData });
     } else {
       toggleIcon(false);
-      console.log('No posting detected');
+      //console.log('No posting detected');
+      chrome.runtime.sendMessage({ type: 'job_posting', jobPosting: null });
     }
   }
 });

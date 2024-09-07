@@ -1,29 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 
-
 function App() {
-  //const [tabUrl, setTabUrl] = useState('');
+  const [jobPosting, setJobPosting] = useState(null);
 
-  //useEffect(() => {
-  //  // Listener for messages from background script
-  //  const handleMessage = (message: any) => {
-  //    if (message.type === 'TAB_UPDATED') {
-  //      setTabUrl(message.url);
-  //    }
-  //  };
-  //
-  //  chrome.runtime.onMessage.addListener(handleMessage);
-  //
-  //  // Cleanup listener on component unmount
-  //  return () => {
-  //    chrome.runtime.onMessage.removeListener(handleMessage);
-  //  };
-  //}, []);
+  useEffect(() => {
+    const messageListener = (message: any) => {
+      if (message.type === 'job_posting') {
+        console.log("Job posting received");
+        setJobPosting(message.jobPosting);
+      }
+    };
+
+    chrome.runtime.onMessage.addListener(messageListener);
+
+    return () => {
+      chrome.runtime.onMessage.removeListener(messageListener);
+    };
+  }, []); 
 
   return (
     <div>
-      <h2>Hello World</h2>
+      <h2>Cover Letter Genie</h2>
+      <div>
+        {jobPosting || "No job posting"}
+      </div>
     </div>
   );
 }
