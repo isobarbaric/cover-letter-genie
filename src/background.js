@@ -11,13 +11,13 @@ const isPosting = (obj) => {
   return false;
 }
 
-let iconPath = 'black-icon16.png';
+let iconPath = 'icons/black-icon128.png';
 
 const toggleIcon = (postingOpen) => {
   if (postingOpen) {
-    iconPath = 'blue-icon16.png';
+    iconPath = 'icons/blue-icon128.png';
   } else {
-    iconPath = 'black-icon16.png';
+    iconPath = 'icons/black-icon128.png';
   }
 
   chrome.action.setIcon({ path: iconPath });
