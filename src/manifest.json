@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Cover Letter Genie",
   "version": "1.0",
-  "description": "A chrome extension to generate a cover letter for WaterlooWorks job postings.",
+  "description": "A chrome extension to generate cover letters for WaterlooWorks job postings.",
   "action": {
     "default_popup": "index.html",
     "default_icon": {
@@ -13,12 +13,17 @@
   },
   "permissions": [
     "activeTab",
-    "tabs"
+    "tabs",
+    "scripting"
   ],
   "background": {
     "service_worker": "background.bundle.js",
     "type": "module"
   },
+  "host_permissions": [
+    "http://*/",
+    "https://*/"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],

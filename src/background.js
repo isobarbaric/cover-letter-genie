@@ -29,6 +29,18 @@ chrome.runtime.onInstalled.addListener(({reason}) => {
   }
 });
 
+
+// run the content script when navigating to a new tab without having to reload the page
+chrome.tabs.onActivated.addListener(async (activeInfo) => {
+  const tabId = activeInfo.tabId;
+
+  chrome.scripting.executeScript({
+    target: { tabId: tabId },
+    files: ['content.bundle.js'],
+  });
+});
+
+
 // TODO: have content script send html without having to reload the page 
 // listen for messages from the content script
 chrome.runtime.onMessage.addListener((message) => {
