@@ -34,15 +34,20 @@ chrome.runtime.onInstalled.addListener(({reason}) => {
 chrome.runtime.onMessage.addListener((message) => {
   if (message.type === 'page_html') {
     const parsedData = extractData(message.html);
+    console.log(parsedData);
 
     if (isPosting(parsedData)) {
       toggleIcon(true);
-      //console.log(parsedData);
-      chrome.runtime.sendMessage({ type: 'job_posting', jobPosting: parsedData });
+      //chrome.runtime.sendMessage({ type: 'job_posting', jobPosting: parsedData });
+      chrome.runtime.onConnect.addListener((port) => {
+        port.postMessage({ type: 'job_posting', jobPosting: parsedData });
+      });
     } else {
       toggleIcon(false);
-      //console.log('No posting detected');
-      chrome.runtime.sendMessage({ type: 'job_posting', jobPosting: null });
+      //chrome.runtime.sendMessage({ type: 'job_posting', jobPosting: null });
+      chrome.runtime.onConnect.addListener((port) => {
+        port.postMessage({ type: 'job_posting', jobPosting: null });
+      });
     }
   }
 });
