@@ -1,10 +1,10 @@
-schema for <div id="postingDiv">:
+schema for `<div id="postingDiv">`:
 
-- first div: <div class="panel panel-default">
-    - first div: <div class="panel-heading">
-    - second div: <div class="panel-body">
-        - table: <table class="table table-bordered">
-            - tbody: <tbody>
+- first div: `<div class="panel panel-default">`
+    - first div: `<div class="panel-heading">`
+    - second div: `<div class="panel-body">`
+        - table: `<table class="table table-bordered">`
+            - tbody: `<tbody>`
                 - first row:
                     - first td: "Term Posted:"
                     - second td: date for timeline
@@ -49,11 +49,11 @@ schema for <div id="postingDiv">:
                     - second td: list of themes and targeted disciplines (e.g. Math, Engineering, etc.)
 
 
-- second div: <div class="panel panel-default">
-    - first div: <div class="panel-heading">
-    - second div: <div class="panel-body">
-        - table: <table class="table table-bordered">
-            - tbody: <tbody>
+- second div: `<div class="panel panel-default">`
+    - first div: `<div class="panel-heading">`
+    - second div: `<div class="panel-body">`
+        - table: `<table class="table table-bordered">`
+            - tbody: `<tbody>`
                 - first row: 
                     - first td: "Applicaton Deadline:"
                     - second td: deadline
@@ -68,10 +68,10 @@ schema for <div id="postingDiv">:
                     - second td: extra information (and instructions?)
 
 
-- third div: <div class="panel panel-default">
-    - first div: <div class="panel-heading">
-    - second div: <div class="panel-body">
-        - table: <table class="table table-bordered">
+- third div: `<div class="panel panel-default">`
+    - first div: `<div class="panel-heading">`
+    - second div: `<div class="panel-body">`
+        - table: `<table class="table table-bordered">`
             - tbody:
                 - first row:
                     - first td: "Organization:"
