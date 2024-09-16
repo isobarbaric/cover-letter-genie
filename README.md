@@ -1,8 +1,10 @@
 # Cover Letter Genie
 
+Detailed README coming soon...
+
 ## Features
 
-- on a job posting, flag jobs that require a cover letter
+(will be added soon)
 
 ## Functionality
 
