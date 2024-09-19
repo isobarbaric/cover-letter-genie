@@ -1,46 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Popup from './Popup';
+import Onboarding from './Onboarding';
 import './App.css';
 
-function App() {
-  const [jobPosting, setJobPosting] = useState(null);
+console.log('App.tsx');
 
-  useEffect(() => {
-    const port = chrome.runtime.connect({ name: 'popup' });
-
-    //port.postMessage({ type: 'get_job_posting' });
-
-    port.onMessage.addListener((message) => {
-      if (message.type === 'job_posting') {
-        console.log("Job posting received:", message.jobPosting);
-        setJobPosting(message.jobPosting);
-      }
-    });
-
-    return () => {
-      port.disconnect(); // Cleanup on unmount
-    };
-  }, []);
-
+const App = () => {
   return (
-    <div>
-      <h2>Cover Letter Genie</h2>
-      <div>
-        {jobPosting ? (
-          <ul>
-            {Object.entries(jobPosting).map(([key, value]) => (
-              <li key={key}>
-                <>
-                  <strong>{key}:</strong> {value}
-                </>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No job posting detected...</p>
-        )}
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Popup />} />
+        <Route path="/onboarding" element={<Onboarding />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

@@ -4,6 +4,8 @@
 
 - on a job posting, flag jobs that require a cover letter
 
+- on an open job posting, automatically open popup to provide option to generate a cover letter
+
 ## Functionality
 
 The schema for how WaterlooWorks job postings are structured is in `schema.md`. 

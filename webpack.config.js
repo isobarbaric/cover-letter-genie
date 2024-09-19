@@ -1,35 +1,53 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  // Entry points for bundling each JavaScript file
   entry: {
     background: './src/background.js',
     content: './src/content.js',
     coopPosting: './src/coopPosting.js',
-    parser: './src/parser.js'
+    parser: './src/parser.js',
+    firebase: './src/firebase.js',
+    popup: './src/Popup.tsx'
   },
   output: {
-    // Output bundles will be placed in the 'dist' folder
     path: path.resolve(__dirname, 'build'),
-    filename: '[name].bundle.js',  // [name] will use the key from the entry object
+    filename: '[name].bundle.js',  
   },
-  mode: 'production',  // Can change to 'development' if you want
+  mode: 'production',  
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(ts|tsx)$/,
+        use: [
+          {
+            loader: 'ts-loader'
+          }
+        ],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',  // Optional: for transpiling ES6+ to ES5
-        },
-      },
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }
+      }
     ],
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.ts', '.tsx'],
   },
   plugins: [
+    // new HtmlWebpackPlugin({
+    //  template: './public/popup.html',
+    //  filename: 'popup.html',
+    //  chunks: ['popup']
+    //}),
     new CopyWebpackPlugin({
       patterns: [
         { from: 'src/manifest.json', to: 'manifest.json' },

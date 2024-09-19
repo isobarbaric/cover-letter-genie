@@ -24,8 +24,10 @@ const toggleIcon = (postingOpen) => {
 }
 
 chrome.runtime.onInstalled.addListener(({reason}) => {
-  if (reason === 'install') {
+  if (reason === chrome.runtime.OnInstalledReason.INSTALL) {
     console.log("WaterlooWorks Cover Letter Genie (V1.0)");
+    chrome.tabs.create({ url: './onboarding.html'})
+
   }
 });
 
@@ -50,13 +52,11 @@ chrome.runtime.onMessage.addListener((message) => {
 
     if (isPosting(parsedData)) {
       toggleIcon(true);
-      //chrome.runtime.sendMessage({ type: 'job_posting', jobPosting: parsedData });
       chrome.runtime.onConnect.addListener((port) => {
         port.postMessage({ type: 'job_posting', jobPosting: parsedData });
       });
     } else {
       toggleIcon(false);
-      //chrome.runtime.sendMessage({ type: 'job_posting', jobPosting: null });
       chrome.runtime.onConnect.addListener((port) => {
         port.postMessage({ type: 'job_posting', jobPosting: null });
       });

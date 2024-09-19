@@ -4,7 +4,7 @@
   "version": "1.0",
   "description": "A chrome extension to generate cover letters for WaterlooWorks job postings.",
   "action": {
-    "default_popup": "index.html",
+    "default_popup": "popup.html",
     "default_icon": {
       "16": "icons/black-icon16.png",
       "48": "icons/black-icon48.png",
@@ -28,7 +28,8 @@
     {
       "matches": ["<all_urls>"],
       "js": [
-        "content.bundle.js"
+        "content.bundle.js",
+        "firebase.bundle.js"
       ]
     }
   ]
