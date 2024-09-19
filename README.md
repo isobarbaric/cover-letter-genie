@@ -1,8 +1,10 @@
 # Cover Letter Genie
 
+Detailed README coming soon...
+
 ## Features
 
-- on a job posting, flag jobs that require a cover letter
+(will be added soon)
 
 - on an open job posting, automatically open popup to provide option to generate a cover letter
 
