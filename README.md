@@ -14,4 +14,4 @@ This tool streamlines the process of applying for jobs on WaterlooWorks, making 
 
 The schema for how WaterlooWorks job postings are structured is in `schema.md`. 
 
-The `extractData` method in `parser.js` is solely responsible for extracting the data from the job posting. Any cleaning up of the data is performed in the `CoopPosting` class in `coopPosting.js`.
+The `extractData` method in `frontend/parser.js` is solely responsible for extracting the data from the job posting. Any cleaning up of the data is performed in the `CoopPosting` class in `frontend/coopPosting.js`.
