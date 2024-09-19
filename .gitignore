@@ -1,5 +1,16 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+__pycache__/
+*.txt
+*.pdf
+test.docx
+**/.DS_Store
+templates/
+output/
+credentials.json
+token.json
+template.toml
+
 # dependencies
 /node_modules
 /.pnp
